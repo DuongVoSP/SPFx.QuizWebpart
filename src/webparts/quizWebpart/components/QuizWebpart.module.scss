@@ -1,0 +1,36 @@
+@import "~@fluentui/react/dist/sass/References.scss";
+
+.QuizWebpart {
+  width: 500px;
+  margin: 0 auto;
+
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 5px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+.BottomDiv {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  background-color: #ffd700;
+  color: #fff;
+  text-align: center;
+  padding: 15px;
+  display: block;
+  animation: hideDiv 10s forwards;
+  z-index: 10000;
+  font-size: larger;
+}
+
+@keyframes hideDiv {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+    display: none;
+  }
+}

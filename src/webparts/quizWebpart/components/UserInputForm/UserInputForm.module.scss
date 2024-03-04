@@ -1,0 +1,25 @@
+@import "~@fluentui/react/dist/sass/References.scss";
+
+.FormContainer {
+  width: 400px;
+  margin: 0 auto;
+
+  background-color: #f0f0f0;
+  padding: 20px;
+  border-radius: 5px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+
+  .MessageInput {
+    height: 300px;
+  }
+
+  .SubjectInput {
+    font-size: larger;
+  }
+
+  .SendButton {
+    font-size: larger;
+    height: 40px;
+    border-radius: 10px;
+  }
+}

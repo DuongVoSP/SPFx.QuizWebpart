@@ -1,0 +1,21 @@
+{
+  "@microsoft/generator-sharepoint": {
+    "plusBeta": false,
+    "isCreatingSolution": true,
+    "nodeVersion": "14.15.0",
+    "sdksVersions": {
+      "@microsoft/microsoft-graph-client": "3.0.2",
+      "@microsoft/teams-js": "2.9.1"
+    },
+    "version": "1.17.4",
+    "libraryName": "quiz-webpart",
+    "libraryId": "ef0fb00d-c7c6-47b3-8e3d-3a99f9587b78",
+    "environment": "spo",
+    "packageManager": "npm",
+    "solutionName": "quiz-webpart",
+    "solutionShortDescription": "quiz-webpart description",
+    "skipFeatureDeployment": true,
+    "isDomainIsolated": false,
+    "componentType": "webpart"
+  }
+}

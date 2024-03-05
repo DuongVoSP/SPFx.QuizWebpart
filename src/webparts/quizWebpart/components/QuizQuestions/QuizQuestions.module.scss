@@ -1,0 +1,23 @@
+.Header {
+    flex-grow: 1;
+    margin-bottom: 5px;
+
+    .Top {
+        display: flex;
+        justify-content: space-between;
+        margin-bottom: 10px;
+    }
+
+    .ProgressBar {
+        margin: 10px 0px;
+    }
+}
+
+.SubmitButton,
+.BackButton,
+.NextButton 
+{
+    font-size: larger;
+    height: 40px;
+    border-radius: 10px;
+}

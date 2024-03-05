@@ -1,4 +1,7 @@
+import { UserData } from "./UserData";
+
 export interface IScreen {
-    onSubmit: () => void;
+    userData?: UserData;
+    onSubmit: (data: any) => void;
     onError: (e) => void;
 }

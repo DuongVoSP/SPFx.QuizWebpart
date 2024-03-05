@@ -6,7 +6,7 @@ import { BaseClientSideWebPart, WebPartContext } from "@microsoft/sp-webpart-bas
 
 import * as strings from "QuizWebpartWebPartStrings";
 import { QuizWebpart } from "./components/QuizWebpart";
-import { IAppContext } from "../../models";
+import { AppContext, IAppContext } from "../../models";
 
 import { setup as pnpSetup } from "@pnp/common";
 import { ISiteUserInfo } from "@pnp/sp/site-users/types";
@@ -14,9 +14,6 @@ import { sp } from "@pnp/sp/presets/all";
 import { Label } from "office-ui-fabric-react";
 
 export interface IQuizWebpartWebPartProps {}
-
-export const AppContext = React.createContext<IAppContext>(null);
-
 export default class QuizWebpartWebPart extends BaseClientSideWebPart<IQuizWebpartWebPartProps> {
   private _currentUser: ISiteUserInfo;
   public render(): void {

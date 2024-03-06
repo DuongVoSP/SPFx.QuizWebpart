@@ -1,3 +1,5 @@
+@import "~@fluentui/react/dist/sass/References.scss";
+
 .FeedbackButton {
     color: #fff;
     padding: 10px 20px;
@@ -6,4 +8,16 @@
     border-radius: 5px;
     cursor: pointer;
     transition: background-color 0.3s;
+}
+
+.FormContainer {
+  background-color: #fff;
+}
+
+h2 {
+  color: #333;
+}
+
+p {
+  color: #555;
 }

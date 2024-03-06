@@ -1,5 +1,5 @@
 ###Setup site
-$siteUrl = "https://upheadsdeveloper.sharepoint.com/sites/StaffManagement"
+$siteUrl = "[Your Tenant URL]"
 Connect-PnPOnline -url $siteUrl -UseWebLogin
 ##**Departments**: define **Location**, **Office Manager**, **Introduce the office**
 $questionListTitle = "Cyber Security Questions"

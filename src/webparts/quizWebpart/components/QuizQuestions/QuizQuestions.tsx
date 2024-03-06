@@ -82,7 +82,7 @@ const QuizQuestions: React.FunctionComponent<IScreen> = ({ userData, onSubmit, o
 
     QuestionService.GetQuestions()
       .then((questionData) => {
-        setQuestionsData(questionData.reverse());
+        setQuestionsData(questionData);
       })
       .catch(onError);
   }, []);

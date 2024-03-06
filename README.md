@@ -2,9 +2,7 @@
 
 ## Summary
 
-Short summary on functionality and used technologies.
-
-[picture of the solution in action, if possible]
+Simple Quiz webpart allow internal user revise the knowledged
 
 ## Used SharePoint Framework Version
 
@@ -19,20 +17,20 @@ Short summary on functionality and used technologies.
 
 ## Prerequisites
 
-> Any special pre-requisites?
+Install PnP PowerShell 
+https://pnp.github.io/powershell/articles/installation.html
 
 ## Solution
 
 | Solution    | Author(s)                                               |
 | ----------- | ------------------------------------------------------- |
-| folder name | Author details (name, company, twitter alias with link) |
+| Quiz webpart| Duong Vo                                                |
 
 ## Version history
 
 | Version | Date             | Comments        |
 | ------- | ---------------- | --------------- |
-| 1.1     | March 10, 2021   | Update comment  |
-| 1.0     | January 29, 2021 | Initial release |
+| 1.0     | March 6, 2024    | Initial release |
 
 ## Disclaimer
 
@@ -41,6 +39,9 @@ Short summary on functionality and used technologies.
 ---
 
 ## Minimal Path to Awesome
+- Replace with you tenant Url and run
+  - **PSScripts/Setup.ps1**
+  - **PSScripts/InitData.ps1**
 
 - Clone this repository
 - Ensure that you are at the solution folder
@@ -48,7 +49,6 @@ Short summary on functionality and used technologies.
   - **npm install**
   - **gulp serve**
 
-> Include any additional steps as needed.
 
 ## Features
 

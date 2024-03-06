@@ -1,6 +1,6 @@
 import * as React from "react";
 import { FeedbackComponentProps } from "./FeedbackComponentProps";
-import { PrimaryButton, TextField } from "office-ui-fabric-react";
+import { PrimaryButton, Stack, TextField } from "office-ui-fabric-react";
 import styles from "./FeedbackComponent.module.scss";
 import { sp } from "@pnp/sp";
 import { IEmailProperties } from "@pnp/sp/sputilities";
@@ -9,7 +9,8 @@ import { AppContext } from "../../../../models";
 const FeedbackComponent = ({ results, onSubmit, onError }: FeedbackComponentProps) => {
   const [mailBody, setMailBody] = React.useState("");
   const { currentUser } = React.useContext(AppContext);
-  const sendFeedback = async () => {
+  
+  const sendFeedback = () => {
     const emailProps: IEmailProperties = {
       To: [currentUser.Email],
       Subject: "Give feedback from the Quiz Game",
@@ -19,18 +20,18 @@ const FeedbackComponent = ({ results, onSubmit, onError }: FeedbackComponentProp
       },
     };
 
-    await sp.utility.sendEmail(emailProps);
-    onSubmit(currentUser.Email);
+    sp.utility.sendEmail(emailProps).then(() => {
+      onSubmit(currentUser.Email);
+    }).catch(onError);    
   };
 
+  console.table(results);
   return (
-    <div>
+    <Stack className={styles.FormContainer} tokens={{childrenGap: 10}}>
       <h2>Quiz Results</h2>
-      {results.map((r) => {
-        <p>
-          {r.Title}: {r.answer.split(";#").join(", ")}
-        </p>;
-      })}
+      <div>
+        {results.map((r) => (<p>{r.Title}: {r.answer?.split(";#").join(", ")}</p>))}
+      </div>
       <TextField multiline height={100} value={mailBody} onChange={(e, val) => setMailBody(val)}></TextField>
       <PrimaryButton
         onClick={(e) => {
@@ -39,7 +40,7 @@ const FeedbackComponent = ({ results, onSubmit, onError }: FeedbackComponentProp
         text="Give Feedback"
         className={styles.FeedbackButton}
       />
-    </div>
+    </Stack>
   );
 };
 

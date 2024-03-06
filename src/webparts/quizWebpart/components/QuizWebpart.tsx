@@ -40,7 +40,17 @@ export const QuizWebpart: React.FunctionComponent<IQuizWebpartProps> = (props: R
     moveNextStep();
   };
 
-  const SCREENS = [<InstructionComponent onSubmit={moveNextStep} onError={handleError} />, <UserInputForm onSubmit={handleUserSubmit} onError={handleError} />, <QuizQuestion userData={userData} onError={handleError} onSubmit={handleQuizSubmit} />, <FeedbackComponent userData={userData} results={quizResults} onError={handleError} onSubmit={moveNextStep} />];
+  const handleSendFeedback = (email: string) => {
+    setAlertMessage("Feedback mail sent to "+ email);
+    setAlertKey(Math.random());
+    setCurrentStep(1)
+  }
+
+  const SCREENS = [
+  <InstructionComponent onSubmit={moveNextStep} onError={handleError} />, 
+  <UserInputForm onSubmit={handleUserSubmit} onError={handleError} />, 
+  <QuizQuestion userData={userData} onError={handleError} onSubmit={handleQuizSubmit} />, 
+  <FeedbackComponent userData={userData} results={quizResults} onError={handleError} onSubmit={handleSendFeedback} />];
   return (
     <div className={styles.QuizWebpart}>
       {SCREENS[currentStep - 1]}

@@ -5,6 +5,7 @@ export interface QuizQuestionsProps {
     type: any, 
     options: any, 
     onAnswer: any
+    answer: any, 
 }
 
 export interface QuizAnswerProps { 

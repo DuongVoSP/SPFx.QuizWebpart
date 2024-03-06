@@ -25,18 +25,18 @@ Add-PnPField -List $responseUserDataList -DisplayName "Email" -InternalName "ema
 Add-PnPField -List $responseUserDataList -DisplayName "Country" -InternalName "country" -Type Text -AddToDefaultView
 
 ##**User Answer**
-$anwserListTitle = "Cyber Security Anwser"
-New-PnPList -Title $anwserListTitle -Url "lists/CyberSecurityAnwsers" -Template GenericList 
+$AnswerListTitle = "Cyber Security Answer"
+New-PnPList -Title $AnswerListTitle -Url "lists/CyberSecurityAnswers" -Template GenericList 
 
-$anwserList = Get-PnPList -Identity $anwserListTitle
-Set-PnPField -List $anwserList -Identity "Title" -Values @{ Title = "Name" }
-Add-PnPField -List $anwserList -DisplayName "Answer" -InternalName "answer" -Type Note
+$AnswerList = Get-PnPList -Identity $AnswerListTitle
+Set-PnPField -List $AnswerList -Identity "Title" -Values @{ Title = "Name" }
+Add-PnPField -List $AnswerList -DisplayName "Answer" -InternalName "answer" -Type Note
 
 #Add Lookup Field to the List   
-Add-PnPField -List $anwserList -Type Lookup -DisplayName "Question" -InternalName "question" -AddToDefaultView
-Set-PnPField -List $anwserList -Identity "question" -Values @{LookupList= $questionList.Id.ToString(); LookupField="Title"}
+Add-PnPField -List $AnswerList -Type Lookup -DisplayName "Question" -InternalName "question" -AddToDefaultView
+Set-PnPField -List $AnswerList -Identity "question" -Values @{LookupList= $questionList.Id.ToString(); LookupField="Title"}
 
-Add-PnPField -List $anwserList -Type Lookup -DisplayName "User response" -InternalName "userResponse" -AddToDefaultView
-Set-PnPField -List $anwserList -Identity "userResponse" -Values @{LookupList= $responseUserDataList.Id.ToString(); LookupField="Title"}
+Add-PnPField -List $AnswerList -Type Lookup -DisplayName "User response" -InternalName "userResponse" -AddToDefaultView
+Set-PnPField -List $AnswerList -Identity "userResponse" -Values @{LookupList= $responseUserDataList.Id.ToString(); LookupField="Title"}
 
 

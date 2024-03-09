@@ -1,17 +1,17 @@
 export interface QuizQuestionsProps { 
-    Id: any;
-    Title: any;
-    question: any;
-    type: any, 
-    options: any, 
-    onAnswer: any
-    answer: any, 
+    Id: number;
+    Title: string;
+    question: string;
+    type: string, 
+    options: string, 
+    onAnswer: (answer: string, questionId?: number) => void;
+    answer: string, 
 }
 
 export interface QuizAnswerProps { 
-    Id: any;
-    Title: any;
-    questionId: any;
-    answer: any, 
-    userId: any
+    Id: number;
+    Title: string;
+    questionId: string;
+    answer: string, 
+    userId: string
 }

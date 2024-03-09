@@ -10,31 +10,19 @@ class TimeAPIService {
   private context: WebPartContext;
   constructor(context) {
     this.context = context;
-    const user: any = context.pageContext.user;
     this.timeZone = Intl.DateTimeFormat().resolvedOptions().timeZone;
   }
 
-  getCurrentTime = () => {
+  getCurrentTime = (): Promise<HttpClientResponse> => {
     const httpClientOptions: IHttpClientOptions = {
-      headers: new Headers() ,
+      headers: new Headers(),
       method: "GET",
-      mode: "cors",
     };
-
-    httpClientOptions.headers["Access-Control-Allow-Origin"] = "*";
 
     const apiUrl = `${API_BASE_URL}/Time/current/zone?timeZone=${this.timeZone}`;
     return this.context.httpClient.get(apiUrl, HttpClient.configurations.v1, httpClientOptions);
   };
-
-  fetch = () => {
-    const apiUrl = `${API_BASE_URL}/Time/current/zone?timeZone=${this.timeZone}`;
-
-    return fetch(apiUrl, 
-      { 
-        method: 'GET'
-      });
-  }
+  
 }
 
 export default TimeAPIService;

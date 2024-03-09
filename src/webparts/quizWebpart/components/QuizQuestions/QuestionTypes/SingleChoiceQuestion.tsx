@@ -1,12 +1,12 @@
 import * as React from "react";
 import { IChoiceGroupOption, ChoiceGroup } from "office-ui-fabric-react";
-import { QuizQuestionsProps } from "./QuizQuestionProps";
+import { QuizQuestionsProps } from "../QuizQuestionProps";
 
 export const SingleChoiceQuestion :  React.FC<QuizQuestionsProps> = ({ Title, question, options, onAnswer, answer }: QuizQuestionsProps) => {
     const statusOptions: IChoiceGroupOption[] = options.split(";#")?.map((str) => {
       return { key: str, text: str };
     });
-    const onChange = (ev: React.FormEvent<HTMLInputElement>, option: any): void => {
+    const onChange = (ev: React.FormEvent<HTMLInputElement>, option: IChoiceGroupOption): void => {
       onAnswer(option.key);
     };
   

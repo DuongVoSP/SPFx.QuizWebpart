@@ -1,6 +1,6 @@
 import { Stack, Checkbox } from "office-ui-fabric-react";
 import * as React from "react";
-import { QuizQuestionsProps } from "./QuizQuestionProps";
+import { QuizQuestionsProps } from "../QuizQuestionProps";
 
 export const MultiChoiceQuestion :  React.FC<QuizQuestionsProps> = ({ Title, question, options, onAnswer, answer }: QuizQuestionsProps) => {
     const [selected, setSelected] = React.useState(answer ? answer.split(";#") : []);

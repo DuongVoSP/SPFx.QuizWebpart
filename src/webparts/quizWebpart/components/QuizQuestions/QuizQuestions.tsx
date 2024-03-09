@@ -1,12 +1,13 @@
 import * as React from "react";
 import { QuizAnswerProps, QuizQuestionsProps } from "./QuizQuestionProps";
 import { AppContext, IScreen } from "../../../../models";
-import { Stack, ProgressIndicator, PrimaryButton, DefaultButton, TextField, Checkbox, IChoiceGroupOption, ChoiceGroup } from "office-ui-fabric-react";
+import { Stack, ProgressIndicator, PrimaryButton, DefaultButton, TextField, Checkbox, IChoiceGroupOption, ChoiceGroup, Label } from "office-ui-fabric-react";
 import styles from "./QuizQuestions.module.scss";
 import { QuestionService } from "../../../../services/QuestionsService";
-import { MultiChoiceQuestion } from "./MultiChoiceQuestion";
-import { SingleChoiceQuestion } from "./SingleChoiceQuestion";
+import { MultiChoiceQuestion } from "./QuestionTypes/MultiChoiceQuestion";
+import { SingleChoiceQuestion } from "./QuestionTypes/SingleChoiceQuestion";
 import { AnswersService } from "../../../../services/AnswersService";
+import Countdown from "../CountdownComponent/Countdown";
 
 const QuizQuestion : React.FC<QuizQuestionsProps> = ({ Id, Title, question, type, options, onAnswer, answer }: QuizQuestionsProps) => {
   const TypeMapComponents = {
@@ -91,7 +92,8 @@ const QuizQuestions: React.FunctionComponent<IScreen> = ({ userData, onSubmit, o
     return (
       <div className={styles.Header}>
         <h1 className={styles.Top}>
-          Welcome #{userData.Id} {userData.Name},<span>{currentTime}</span>
+          <span>Welcome #{userData.Id} {userData.Name},</span> 
+          <span><Countdown minutes={30}  onEnd={() => { console.log("End") }} /></span>
         </h1>
         <ProgressIndicator styles={{ itemName: { fontWeight: 600 } }} label={`[${questionIndex + 1}/${QuestionsData.length}]`} percentComplete={(questionIndex + 1) / QuestionsData.length} className={styles.ProgressBar} barHeight={5} />
       </div>

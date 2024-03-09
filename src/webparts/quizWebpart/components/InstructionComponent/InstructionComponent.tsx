@@ -1,7 +1,8 @@
-import { PrimaryButton, Stack } from "office-ui-fabric-react";
+import { Label, PrimaryButton, Stack } from "office-ui-fabric-react";
 import * as React from "react";
 import styles from "./InstructionComponent.module.scss";
 import { IScreen } from "../../../../models";
+import Countdown from "../CountdownComponent/Countdown";
 
 const InstructionComponent = ({ onSubmit, onError }: IScreen) => {
   const handleSubmit = () => {

@@ -23,6 +23,7 @@ module.exports = {
         // STANDARDIZED BY:   @typescript-eslint\eslint-plugin\dist\configs\recommended.json
         //
         // CONFIGURATION:     By default, these are banned: String, Boolean, Number, Object, Symbol
+        '@typescript-eslint/no-extra-semi' : 0,
         '@typescript-eslint/ban-types': [
           1,
           {

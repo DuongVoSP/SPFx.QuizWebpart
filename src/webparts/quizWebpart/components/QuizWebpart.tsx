@@ -6,7 +6,9 @@ import QuizQuestion from "./QuizQuestions/QuizQuestions";
 import UserInputForm from "./UserInputForm/UserInputForm";
 import FeedbackComponent from "./FeedbackComponent/FeedbackComponent";
 import InstructionComponent from "./InstructionComponent/InstructionComponent";
+import Animation from "./AnimationComponent/Animation";
 import { UserDataService } from "../../../services/UserDataService";
+import AnimationComponent from "./AnimationComponent/Animation";
 
 export interface IQuizWebpartProps {}
 
@@ -47,6 +49,7 @@ export const QuizWebpart: React.FunctionComponent<IQuizWebpartProps> = (props: R
   }
 
   const SCREENS = [
+    <AnimationComponent onSubmit={moveNextStep} onError={handleError} />, 
   <InstructionComponent onSubmit={moveNextStep} onError={handleError} />, 
   <UserInputForm onSubmit={handleUserSubmit} onError={handleError} />, 
   <QuizQuestion userData={userData} onError={handleError} onSubmit={handleQuizSubmit} />, 
